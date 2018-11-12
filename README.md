@@ -1,20 +1,47 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 19: Asset Management
-===
+## LAB 19: Asset Management
 
-## Learning Objectives
-* Students will be able to upload static assets to AWS S3
+#### Author
+Trevor Stam
 
-## Outline
+### Assignment
+* create an AWS account
+* create an AWS Access Key and Secret
+  * add the Access Key and Secret to your `.env` file
+* create a new model that represents a file type that you want to store on AWS S3
+  * ex: `.mp3`, `.mp4`, `.png`, etc
+* create a test that uploads one of these files to your route
+* use `multer` to parse the file upload request
+* use the `aws-sdk` to assist with uploading
+* create user, profile, and image models, with relational connections
+* combine your API, Auth, and Upload modules into a single application
+* Following a sign-in, create a profile model entry, connected to the user id
+* Following the upload of an image, create a new record in the image collection, connected to the profile
+* Using populate, return a user's full profile AND a list of all images they've uploaded as a JSON object
+* Later, we can use this API to feed a Pinterest-like application.
 
-### AWS S3
-Amazon Simple Storage Service (AWS S3) is simple but powerful cloud data storage solution. It can hold assets of any size. File assets can be uploaded to S3 Buckets. Buckets are essentially file systems that can hold files and folders. In an S3 Bucket, a filename is called a Key. Each asset in stored in a Bucket has a URI and specific permissions. If the asset has public read permissions, anyone can retrieve the asset using a `GET` request.
+### Dependencies
+aws-sdk,
+babel-env,
+babel-eslint,
+babel-register,
+bcrypt,
+cors,
+dotenv,
+eslint,
+express,
+fs-extra,
+http-errors,
+jest,
+jsonwebtoken,
+mongodb-memory-server,
+mongoose,
+morgan,
+multer,
+require-dir,
+supertest
 
-S3 is used for storing large data assets that databases can not handle. S3 is commonly used to host images, videos, audio, 3D models, CSV files, application files, binary executables, and much more.
-
-
-### Benefits of AWS S3
-
-In addition to bucket creation for managing your application and user assets, S3 provides the following helpers for managing your data:
-  * downloadable data – download all of your data and/or enable others to do the same.
-  * permissions – grant or deny access to others who want to upload or download data to/from your bucket(s).
-  * standard interfaces – utilizes the REST interface and is designed to work with any internet based development toolkit.
+### Getting Started
+- fork and clone repo
+- Get node server running
+- Make sure MongoDB is running simultaneously
+- Use Postman to test the routes
