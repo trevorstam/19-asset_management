@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/trevorstam/19-asset_management#readme",
   "dependencies": {
-    "aws-sdk": "^2.353.0",
+    "aws-sdk": "^2.814.0",
     "babel-env": "^2.4.1",
     "babel-eslint": "^10.0.1",
     "babel-register": "^6.26.0",
